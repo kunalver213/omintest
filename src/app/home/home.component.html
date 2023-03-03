@@ -1,0 +1,195 @@
+<div class="container" class="main-div">
+
+    <div class="row">
+        <div class="col-2"><img src="../../assets/omnilogo.jpg" alt="Trulli" width="80" height="40" class="logo-img"></div>
+        <div class="col-8 lbl-home">
+            HOME
+        </div>
+        <div class="col-2">
+            <div class="row">
+                <div class="col-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg></div>
+                <div class="col-10 user-lbls">
+                    <div>User: Sachin</div> 
+                    <div>MerchantId: COMPARQTI</div> 
+                </div>
+            </div>
+            
+        </div> 
+    </div>
+    
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 title-bar">
+            Past 5 days
+        </div>
+        <div class="col-2"> </div>
+    </div>
+
+    <div class="row cards-row">
+      <div class="col-3 card-cont">
+        <div class="card-div">
+            <div class="lbl-sales">Sales</div>
+            <div>$ 5193</div>
+            <div>              
+              <canvas baseChart class="chart"
+              [data]="lineChartData"
+              [options]="lineChartOptions"
+              [type]="lineChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+            </div>
+        </div>
+      </div>
+      <div class="col-3 card-cont">
+        <div class="card-div">
+            <div class="lbl-sales">Sales</div>
+            <div>$ 519</div>
+            <div>Graph</div>
+        </div>
+      </div>
+      <div class="col-3 card-cont">
+        <div class="card-div">
+            <div class="lbl-sales">Sales</div>
+            <div>$ 519</div>
+            <div>Graph</div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-div">
+            <div class="lbl-sales">Sales</div>
+            <div>$ 519</div>
+            <div>Graph</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row cards-row">
+        <div class="col-7 card-cont">
+          <div class="card-div p-0">
+            <div class="bar-transaction">
+                Latest Transactions <button type="button" class="btn btn-primary btn-seeall">See all</button>
+            </div>
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="p-left-25px">DATE</th>
+                    <th scope="col">CARD TYPE</th>
+                    <th scope="col">TRANSACTION TYPE</th>
+                    <th scope="col">RETRIEVAL REF.#</th>
+                    <th scope="col" class="p-right-25px">AMOUNT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr (click)="openPopup()">
+                    <td class="p-left-25px">1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td class="p-right-25px">@mdo</td>
+                  </tr>
+                  <tr>
+                    <td class="p-left-25px">1</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td class="p-right-25px">@mdo</td>
+                  </tr>
+                  <tr>
+                    <td class="p-left-25px">1</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td class="p-right-25px">@mdo</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="card-div p-0">
+            <div class="bar-transaction">
+                Response Code
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="btn-cross" (click)="closePopup()">      
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </div>
+      <div class="row" style="visibility: hidden;">x</div>
+      <div><button type="button" class="btn btn-success">Purchase</button></div>
+      <hr>
+      <div class="row">
+        <div class="col-4">Card</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">4849891XXXXXXX789</div>
+      </div>
+      <div class="row">
+        <div class="col-4">Statement Date</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">07:22</div>
+      </div>
+      <div class="row">
+        <div class="col-4">Retailer Id</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">CMPAIQBQOPP</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-4">Trace No</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">943603</div>
+      </div>
+      <div class="row">
+        <div class="col-4">Approval Code</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">782456</div>
+      </div>
+      <div class="row">
+        <div class="col-4">RRN</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">00005484515</div>
+      </div>
+      <hr>
+      <div><button type="button" class="btn btn-dark">Amount Details</button></div>
+      <hr>
+      <div class="row">
+        <div class="col-4">Transaction Amount</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">19900</div>
+      </div>
+      <div class="row">
+        <div class="col-4">Commission</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">$246</div>
+      </div>
+      <div class="row">
+        <div class="col-4">Fees</div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right">$49</div>
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+  
